@@ -1,0 +1,24 @@
+<template>
+    <template if:true={loadComponent}>
+        <div style="background-color: whitesmoke;">
+            <lightning-layout horizontal-align="center" vertical-align="center">
+                <lightning-layout-item padding="around-small" size="4">
+                    <img style="border: 4px solid white;" src={movieDetails.Poster} alt="Image Not Found"/>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="8">
+                    <div style="text-align: center; font-size:2rem; color:#d4aa11">
+                        {movieDetails.Title}
+                    </div>
+                    <p><b>Year : </b>{movieDetails.Year}</p>
+                    <p><b>Rating : </b>{movieDetails.imdbRating}</p>
+                    <p><b>Released : </b>{movieDetails.Released}</p>
+                    <p><b>Genre : </b>{movieDetails.Genre}</p>
+                    <p><b>Writer : </b>{movieDetails.Writer}</p>
+                    <p><b>Actors : </b>{movieDetails.Actors}</p>
+                    <!-- <p><b>Plot : </b>{movieDetails.Plot}</p> -->
+                    <p><b>Language : </b>{movieDetails.Language}</p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+</template>

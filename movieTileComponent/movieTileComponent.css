@@ -1,0 +1,17 @@
+.tile{
+    display: block; 
+    cursor:pointer;
+}
+.selected{
+    border: 2px solid red;
+}
+.container{
+    background-size:cover; 
+    background-position:center;
+    background-repeat:no-repeat; 
+}
+.container img{
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+}

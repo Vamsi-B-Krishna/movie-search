@@ -1,0 +1,34 @@
+<template>
+    <div class="slds-p-around_small" style="border: 2px solid black; border-radius:5px; background-color:whitesmoke">
+        <lightning-layout horizontal-align="center" vertical-align="end">
+            <lightning-layout-item padding="around-small" size="3">
+                <lightning-combobox name="type" label="Type" value={selectedType} placeholder="Select Type"
+                    options={options} onchange={handleOnChange}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="7">
+                <lightning-input name="movieName" label="Enter Movie Name"
+                    placeholder="Search for Movie/Series" onchange={handleOnChange} value={selectedSearch}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="2">
+                <lightning-button label="Search" variant="brand" onclick={handleOnClick}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <!--Display movie tail-->
+    <template if:true={displaySearchResult}>
+        <div class="slds-m-top_large slds-scrollable_y slds-box" style="height: 600px; background-color:whitesmoke">
+            <lightning-layout horizontal-align="center" multiple-rows="true">
+                <template for:each={searchResult} for:item="menuItem">
+                    <lightning-layout-item padding="around-small" size="4" key={menuItem.imdbID}>
+                        <c-movie-tile-component selected-movie-id={selectedMovieId} movie={menuItem} onselectedmovie={handleSelectedMovie}></c-movie-tile-component>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </template>
+    <template if:true={showErrorMessage}>
+        <div class="slds-p-around_medium" style="background-color: whitesmoke; text-align:center">
+            <b>Movie Not Found.</b>
+        </div>
+    </template>
+</template>
