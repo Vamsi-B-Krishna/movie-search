@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Basic Calculator">
+        <div>
+            <lightning-input type="number" label="First Number" variant="label-inline" name="fnumber" value={firstnumber} onchange={handleonchange}></lightning-input><br/>
+            <lightning-input type="number" label="Second Number" variant="label-inline" name="snumber" value={secondnumber} onchange={handleonchange}></lightning-input><br/>
+            <lightning-input label="Result" variant="label-inline" name="res" value={operationresult}></lightning-input><br/><br/>
+            <div class="slds-text-align_center">
+                <lightning-button label="Addition" variant="brand" onclick={doaddition}></lightning-button>&nbsp;
+                <lightning-button label="Subtract" variant="brand" onclick={dosubtraction}></lightning-button>&nbsp;
+                <lightning-button label="Multipy" variant="brand" onclick={domultiplication}></lightning-button>&nbsp;
+                <lightning-button label="Division" variant="brand" onclick={dodivision}></lightning-button>&nbsp;
+            </div>
+         </div>
+    </lightning-card>
+</template>
