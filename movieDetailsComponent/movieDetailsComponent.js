@@ -24,7 +24,7 @@ export default class MovieDetailsComponent extends LightningElement {
         console.log('disconnected callback is called.')
     }
     
-    // Encapsulate logic for Lightning message service subscribe and unsubsubscribe
+
     subscribeToMessageChannel() {
         if (!this.subscription) {
             this.subscription = subscribe(
