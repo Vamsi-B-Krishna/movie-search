@@ -14,7 +14,7 @@ export default class MovieDetailsComponent extends LightningElement {
     movieDetails = {};
     loadComponent = false;
     @wire(MessageContext) messageContext;
-
+    
     connectedCallback() {
         this.subscribeToMessageChannel();
     }
